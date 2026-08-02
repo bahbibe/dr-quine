@@ -1,10 +1,5 @@
-// It's a quine.
+/*Out*/
 #include <stdio.h>
-char *s="// It's a quine.%c#include <stdio.h>%cchar *s=%c%s%c;%cvoid foo(){%cprintf(s,10, 10, 34, s, 34, 10, 10, 10, 10, 10, 10, 10, 10);%c}%cint main(){%c// in%cfoo();%c}%c";
-void foo(){
-printf(s,10, 10, 34, s, 34, 10, 10, 10, 10, 10, 10, 10, 10);
-}
-int main(){
-// in
-foo();
-}
+char *s="/*Out*/%c#include <stdio.h>%cchar *s=%c%s%c;%cvoid print(){printf(s,10, 10, 34, s, 34, 10, 10);}%cint main(){/*In*/print();}";
+void print(){printf(s,10, 10, 34, s, 34, 10, 10);}
+int main(){/*In*/print();}
