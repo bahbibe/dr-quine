@@ -1,6 +1,6 @@
 # Dr_Quine
 
-Self-reproducing programs (quines) written in **C** and **x86-64 Assembly (NASM)** on Linux.
+Self-reproducing programs (quines) written in **C** and **x86-64 Assembly (NASM)** on Linux, plus a bonus **Python** redo.
 
 The project builds three programs, each in both languages — Colleen, Grace and Sully — exploring
 self-reproduction, self-replication and self-execution (the recursion theorem of Kleene).
@@ -14,11 +14,15 @@ dr-quine/
 │   ├── Grace.c
 │   ├── Sully.c
 │   └── Makefile
-└── ASM/                # NASM implementations, own Makefile
-    ├── Colleen.s
-    ├── Grace.s
-    ├── Sully.s
-    └── Makefile
+├── ASM/                # NASM implementations, own Makefile
+│   ├── Colleen.s
+│   ├── Grace.s
+│   ├── Sully.s
+│   └── Makefile
+└── Python/             # Bonus: same three programs, redone in Python
+    ├── Colleen.py
+    ├── Grace.py
+    └── Sully.py
 ```
 
 ## Programs
@@ -52,4 +56,20 @@ make -C ASM
 # Sully
 ./C/Sully && diff C/Sully_0.c <(sed 's/5/0/' C/Sully.c)
 ./ASM/Sully && diff ASM/Sully_0.s <(sed 's/5/0/' ASM/Sully.s)
+```
+
+## Bonus
+
+`Python/` redoes all three programs in Python (only evaluated once the mandatory part above is perfect). No Makefile — run directly:
+
+```sh
+# Colleen
+python3 Python/Colleen.py | diff - Python/Colleen.py
+
+# Grace (run from a scratch dir, not the repo)
+python3 Python/Grace.py && diff Grace_kid.py Python/Grace.py
+
+# Sully (run from a scratch dir; chains down to Sully_0.py, compiling+running each generation)
+python3 Python/Sully.py
+diff Sully.py Sully_0.py
 ```
