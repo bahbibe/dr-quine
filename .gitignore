@@ -54,4 +54,8 @@ dkms.conf
 # debug information files
 *.dwo
 
+# Python
+__pycache__/
+*.pyc
+
 en.subject.pdf
