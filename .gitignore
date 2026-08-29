@@ -58,4 +58,12 @@ dkms.conf
 __pycache__/
 *.pyc
 
+# Build outputs (no extension, so *.o/*.out above don't catch them)
+/C/Colleen
+/C/Grace
+/C/Sully
+/ASM/Colleen
+/ASM/Grace
+/ASM/Sully
+
 en.subject.pdf
