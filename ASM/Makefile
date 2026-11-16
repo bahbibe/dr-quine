@@ -7,13 +7,13 @@ CFLAGS   = -Wall -Wextra -Werror
 all: Colleen Grace Sully
 
 Colleen: Colleen.o
-	$(CC) $(CFLAGS) -no-pie -z noexecstack -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $<
 
 Grace: Grace.o
-	$(CC) $(CFLAGS) -no-pie -z noexecstack -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $<
 
 Sully: Sully.o
-	$(CC) $(CFLAGS) -no-pie -z noexecstack -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $<
 
 %.o: %.s
 	$(NASM) -f elf64 $< -o $@
