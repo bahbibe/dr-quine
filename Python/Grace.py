@@ -1,6 +1,5 @@
-# a single comment
-B = lambda: (f := open("Grace_kid.py", "w"), f.write(s % s), f.close())
-A = lambda x: x
-MAIN = A(B)
-s = '# a single comment\nB = lambda: (f := open("Grace_kid.py", "w"), f.write(s %% s), f.close())\nA = lambda x: x\nMAIN = A(B)\ns = %r\nMAIN()\n'
-MAIN()
+# Grace
+F = "Grace_kid.py"
+S = '# Grace\nF = "Grace_kid.py"\nS = %r\nMAIN = \'f = open(F, "w"); f.write(S %% S); f.close()\'\nexec(MAIN)\n'
+MAIN = 'f = open(F, "w"); f.write(S % S); f.close()'
+exec(MAIN)
