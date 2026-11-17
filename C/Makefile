@@ -1,8 +1,6 @@
 CC      = gcc
 CFLAGS  = -Wall -Wextra -Werror
 
-NAME    = all
-
 .PHONY: all clean fclean re
 
 all: Colleen Grace Sully
